@@ -21,11 +21,11 @@ To successfully compile the following is needed:
 
 * The master branch of Agda.
 * [Agda Standard Library](https://github.com/agda/agda-stdlib)
-* [Cubical](https://github.com/Saizan/cubical-demo/)
+* [Cubical Demo](https://github.com/Saizan/cubical-demo/)
 
 Has been tested with:
 
-  * Agda version 2.6.0-d3efe64
+  * Agda version 2.6.0-472fc6b
 
 Building
 ========
@@ -46,7 +46,7 @@ them system wide:
     git clone $CAT/libs/cubical
     echo << EOF | tee -a ~/.agda/libraries
     $HOME/.agda/libs/agda-stdlib/standard-library.agda-lib
-    $HOME/.agda/libs/cubical/cubical.agda-lib
+    $HOME/.agda/libs/cubical/cubical-demo.agda-lib
     EOF
 
 Or you could symlink them as well if you want.

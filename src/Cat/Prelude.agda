@@ -17,8 +17,9 @@ idFun A a = a
 open import Cubical public
 -- FIXME rename `gradLemma` to `fromIsomorphism` - perhaps just use wrapper
 -- module.
-open import Cubical.GradLemma
-  using (gradLemma)
+open import Cubical.IsoToEquiv
+  renaming (isoToEquiv to gradLemma)
+  hiding (isoToPath)
   public
 open import Cubical.NType
   using (⟨-2⟩ ; ⟨-1⟩ ; ⟨0⟩ ; TLevel ; HasLevel ; isGrpd)

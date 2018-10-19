@@ -4,7 +4,7 @@ name: cat
 --   A formalization of category theory in Agda using cubical type theory.
 depend:
   standard-library
-  cubical
+  cubical-demo
 include:
   src
 -- libraries:

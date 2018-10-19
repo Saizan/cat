@@ -54,23 +54,24 @@ module _ {ℓ ℓ' : Level} (Ns : Set ℓ) where
         → case (f i) of λ
           { (inj₁ (fi , _)) → case (f j) of λ
             { (inj₁ (fj , _)) → fi ≡ fj → i ≡ j
-            ; (inj₂ _) → Lift ⊤
+            ; (inj₂ _) → Lift ℓ ⊤
             }
-          ; (inj₂ _) → Lift ⊤
+          ; (inj₂ _) → Lift ℓ ⊤
           }
 
       Hom = Σ Hom' rules
 
     module Raw = RawCategory
     -- The category of names and substitutions
-    Rawℂ : RawCategory ℓ ℓ -- ℓo (lsuc lzero ⊔ ℓo)
-    Raw.Object Rawℂ = FiniteDecidableSubset
-    Raw.Arrow Rawℂ = Hom
-    Raw.identity Rawℂ {o} = inj₁ , λ { (i , ii) (j , jj) eq → Σ≡ eq {!refl!} }
-    Raw._<<<_ Rawℂ = {!!}
 
-    postulate IsCategoryℂ : IsCategory Rawℂ
+    -- Rawℂ : RawCategory ℓ ℓ -- ℓo (lsuc lzero ⊔ ℓo)
+    -- Raw.Object Rawℂ = FiniteDecidableSubset
+    -- Raw.Arrow Rawℂ = Hom
+    -- Raw.identity Rawℂ {o} = inj₁ , λ { (i , ii) (j , jj) eq → Σ≡ eq {!refl!} }
+    -- Raw._<<<_ Rawℂ = {!!}
 
-    ℂ : Category ℓ ℓ
-    raw ℂ = Rawℂ
-    isCategory ℂ = IsCategoryℂ
+    -- postulate IsCategoryℂ : IsCategory Rawℂ
+
+    -- ℂ : Category ℓ ℓ
+    -- raw ℂ = Rawℂ
+    -- isCategory ℂ = IsCategoryℂ

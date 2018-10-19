@@ -5,7 +5,7 @@ open import Cubical.Primitives
 open import Cubical.FromStdLib renaming (ℓ-max to _⊔_)
 open import Cubical.PathPrelude hiding (inverse)
 open import Cubical.PathPrelude using (isEquiv ; isContr ; fiber) public
-open import Cubical.GradLemma hiding (isoToPath)
+open import Cubical.IsoToEquiv hiding (isoToPath)
 
 open import Cat.Prelude using
   ( lemPropF ; setPi ; lemSig ; propSet
@@ -229,7 +229,7 @@ module _ {ℓa ℓb : Level} (A : Set ℓa) (B : Set ℓb) where
     toIsomorphism = iso
 
     ≃isEquiv : Equiv A B (isEquiv A B)
-    Equiv.fromIso     ≃isEquiv {f} (f~ , iso) = gradLemma f f~ rv vr
+    Equiv.fromIso     ≃isEquiv {f} (f~ , iso) = isoToEquiv f f~ rv vr
       where
       rv : (b : B) → _ ≡ b
       rv b i = snd iso i b
